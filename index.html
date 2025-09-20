@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection SharePoint</title>
+  <script>
+    window.onload = function() {
+      var url = "https://legroupenova.sharepoint.com/sites/InformatiqueInterne";
+      // Ouvre le site dans un nouvel onglet navigateur
+      window.open(url, "_blank");
+
+      // Message affiché dans l’iframe Teams
+      document.body.innerHTML = `
+        <h3>Votre site s'est ouvert dans le navigateur externe.</h3>
+        <p>Si ce n'est pas le cas, <a href="${url}" target="_blank">cliquez ici</a>.</p>
+      `;
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
