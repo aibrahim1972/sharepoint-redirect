@@ -1,49 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ouvrir le site - Informatique Interne</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
-      margin: 0;
-      align-items: center;
-      justify-content: center;
-      background: #f4f6f8;
-      color: #222;
+  <meta charset="UTF-8">
+  <title>Redirection SharePoint</title>
+  <script>
+    window.onload = function() {
+      var url = "https://legroupenova.sharepoint.com/sites/InformatiqueInterne";
+      
+      // Ouvre le site dans un nouvel onglet navigateur
+      window.open(url, "_blank", "noopener,noreferrer");
+
+      // Message affiché dans l’iframe Teams
+      const container = document.createElement("div");
+      container.innerHTML = `
+        <h3>Votre site s'est ouvert dans un navigateur externe.</h3>
+        <p>Si ce n'est pas le cas, 
+          <a href="${url}" target="_blank" rel="noopener noreferrer">cliquez ici</a>.
+        </p>
+      `;
+      document.body.appendChild(container);
     }
-    .card {
-      text-align: center;
-      padding: 28px;
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      background: #fff;
-      max-width: 520px;
-    }
-    h1 { margin: 0 0 12px; font-size: 20px; }
-    p { margin: 0 0 18px; color: #555; }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 6px;
-      background: #0078d4;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .note { margin-top:12px; font-size:12px; color:#888 }
-  </style>
+  </script>
 </head>
 <body>
-  <div class="card">
-    <h1>Accès au site Informatique Interne</h1>
-    <p>Cliquez sur le bouton ci-dessous pour ouvrir le site complet dans un nouvel onglet.</p>
-    <a id="openBtn" class="btn" href="https://legroupenova.sharepoint.com/sites/InformatiqueInterne" target="_blank" rel="noopener noreferrer">Ouvrir le site</a>
-    <div class="note">Si le navigateur bloque l’ouverture, autorisez les pop-ups ou faites un clic droit → Ouvrir dans un nouvel onglet.</div>
-  </div>
+  <noscript>
+    <p>JavaScript est désactivé. Veuillez <a href="https://legroupenova.sharepoint.com/sites/InformatiqueInterne" target="_blank" rel="noopener noreferrer">cliquer ici</a> pour accéder au site.</p>
+  </noscript>
 </body>
 </html>
-
